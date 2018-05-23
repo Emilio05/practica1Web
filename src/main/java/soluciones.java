@@ -15,6 +15,7 @@ public class soluciones {
         cargarDocumento(url);
         cantidadLineas(cargarDocumento(url), url);
         cantidadParrafos(cargarDocumento(url), url);
+        imagenesDentroDeParrafos(cargarDocumento(url), url);
     }
 
     private String leerURL() {
@@ -48,16 +49,24 @@ public class soluciones {
     private void cantidadParrafos(Document doc, String url){
 
         Elements parrafos = doc.getElementsByTag("p");
-        System.out.println("B. La cantidad de parrafos que hay en el recurso retornado por " + url + "son: " + parrafos.size() +
+        System.out.println("B. La cantidad de parrafos que hay en el recurso retornado por " + url + " son: " + parrafos.size() +
                 " parrafos");
+
+
     }
 
     private void imagenesDentroDeParrafos(Document doc, String url){
 
         int contador = 0;
 
-        Elements parrafos = doc.getElementsByTag("p");
+        for (Element parrafo: doc.getElementsByTag("p")) {
+            for (Element imagen: parrafo.getElementsByTag("img")) {
+                contador++;
+            }
+        }
+        System.out.println("C. La cantidad de imagenes dentro de parrafos que hay en el recurso retornado por " + url + " son: " + contador +
+                " imagenes");
 
-       
+
     }
 }
