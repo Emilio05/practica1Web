@@ -16,6 +16,7 @@ public class soluciones {
         cantidadLineas(cargarDocumento(url), url);
         cantidadParrafos(cargarDocumento(url), url);
         imagenesDentroDeParrafos(cargarDocumento(url), url);
+        cantidadDeFormularios(cargarDocumento(url));
     }
 
     private String leerURL() {
@@ -61,12 +62,36 @@ public class soluciones {
 
         for (Element parrafo: doc.getElementsByTag("p")) {
             for (Element imagen: parrafo.getElementsByTag("img")) {
+
                 contador++;
             }
         }
         System.out.println("C. La cantidad de imagenes dentro de parrafos que hay en el recurso retornado por " + url + " son: " + contador +
                 " imagenes");
 
-
     }
+
+    private void cantidadDeFormularios(Document doc){
+
+        int contadorPost = 0;
+        int contadorGet = 0;
+
+        for(Element formulario: doc.getElementsByTag("form")){
+            for(Element metodoGet: formulario.getElementsByAttributeValue("method", "get")){
+
+                contadorGet++;
+            }
+        }
+
+        for(Element formulario: doc.getElementsByTag("form")){
+            for(Element metodoGet: formulario.getElementsByAttributeValue("method", "post")){
+
+                contadorPost++;
+            }
+        }
+
+        System.out.println("D. La cantidad de formularios implementados con el metodo get es: " + contadorGet + " y por " +
+                "el metodo post son: " + contadorPost + " formularios");
+    }
+
 }

@@ -50,8 +50,8 @@
       <file leaf-file-name="soluciones.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/soluciones.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="66" column="122" selection-start-line="66" selection-start-column="122" selection-end-line="66" selection-end-column="122" />
+            <state relative-caret-position="557">
+              <caret line="96" column="1" lean-forward="true" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -514,15 +514,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526941674719</updated>
-      <workItem from="1526941681177" duration="22853000" />
+      <workItem from="1526941681177" duration="24051000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22853000" />
+    <option name="totallyTimeSpent" value="24051000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -534,11 +535,11 @@
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3292683" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3292683" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21529563" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21529563" />
       <window_info anchor="bottom" id="Build" weight="0.32991204" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="right" id="Gradle" visible="true" weight="0.13239075" />
@@ -579,8 +580,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/soluciones.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="66" column="122" selection-start-line="66" selection-start-column="122" selection-end-line="66" selection-end-column="122" />
+        <state relative-caret-position="557">
+          <caret line="96" column="1" lean-forward="true" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
