@@ -17,6 +17,7 @@ public class soluciones {
         cantidadParrafos(cargarDocumento(url), url);
         imagenesDentroDeParrafos(cargarDocumento(url), url);
         cantidadDeFormularios(cargarDocumento(url));
+        mostrarInputs(cargarDocumento(url));
     }
 
     private String leerURL() {
@@ -93,5 +94,15 @@ public class soluciones {
         System.out.println("D. La cantidad de formularios implementados con el metodo get es: " + contadorGet + " y por " +
                 "el metodo post son: " + contadorPost + " formularios");
     }
+
+    private void mostrarInputs(Document doc){
+
+        System.out.println("E. ");
+
+        for(Element input: doc.getElementsByTag("input")){
+            System.out.println(input);
+        }
+    }
+
 
 }
