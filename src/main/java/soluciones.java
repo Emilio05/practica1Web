@@ -18,6 +18,7 @@ public class soluciones {
         imagenesDentroDeParrafos(cargarDocumento(url), url);
         cantidadDeFormularios(cargarDocumento(url));
         mostrarInputs(cargarDocumento(url));
+        peticionAlServidor(cargarDocumento(url), url);
     }
 
     private String leerURL() {
@@ -32,7 +33,7 @@ public class soluciones {
     private Document cargarDocumento(String url){
 
         try{
-            Document doc = Jsoup.connect(url).get();
+            Document doc = Jsoup.connect(url).timeout(20000).get();
             return doc;
            // String title = doc.title();
             //System.out.printf(title); //probando con el titulo de la pagina web
@@ -91,7 +92,7 @@ public class soluciones {
             }
         }
 
-        System.out.println("D. La cantidad de formularios implementados con el metodo get es: " + contadorGet + " y por " +
+        System.out.println("D. La cantidad de formularios implementados con el metodo get son: " + contadorGet + ", y por " +
                 "el metodo post son: " + contadorPost + " formularios");
     }
 
@@ -104,5 +105,25 @@ public class soluciones {
         }
     }
 
+    private void peticionAlServidor(Document doc, String url){
 
+        try {
+            for(Element formulario: doc.getElementsByTag("form"))
+            {
+                if(formulario.attr("method").equals("post")){
+
+                    doc = Jsoup.connect(url)
+                            .data("asignatura", "practica1")
+                            .header("Matricula", "2012-0994")
+                            .post();
+                    System.out.println("F.");
+                    System.out.println(doc);
+                }
+            }
+
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 }
