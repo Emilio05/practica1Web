@@ -1,11 +1,15 @@
+
 import java.io.*;
 import org.jsoup.Jsoup;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.Scanner;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.apache.commons.validator.UrlValidator;
+
 
 public class soluciones {
 
@@ -23,11 +27,26 @@ public class soluciones {
 
     private String leerURL() {
 
+        UrlValidator urlValidator = new UrlValidator();
+
+        String url = null;
+
         Scanner reader = new Scanner(System.in);
         System.out.println("Introducir URL: ");
-        String url = reader.nextLine();
+        url = reader.nextLine();
         System.out.println("");
+
+        if((urlValidator.isValid(url)))
         return url;
+        else {
+            System.out.println("URL NO VALIDA!!!");
+            return null;
+        }
+
+
+
+
+
     }
 
     private Document cargarDocumento(String url){
@@ -117,7 +136,7 @@ public class soluciones {
                             .header("Matricula", "2012-0994")
                             .post();
                     System.out.println("F.");
-                    System.out.println(doc);
+                    System.out.println(doc.outerHtml());
                 }
             }
 
