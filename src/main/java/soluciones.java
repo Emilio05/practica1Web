@@ -39,7 +39,7 @@ public class soluciones {
         if((urlValidator.isValid(url)))
         return url;
         else {
-            System.out.println("URL NO VALIDA!!!");
+            System.out.println("URL NO VALIDA! El formato de la URL debe ser de la siguiente manera: https://[direccion], ej. https://facebook.com");
             return null;
         }
 
@@ -126,17 +126,17 @@ public class soluciones {
 
     private void peticionAlServidor(Document doc, String url){
 
-        try {
-            for(Element formulario: doc.getElementsByTag("form"))
-            {
-                if(formulario.attr("method").equals("post")){
-
-                    doc = Jsoup.connect(url)
+            try {
+                for(Element formulario: doc.getElementsByTag("form"))
+                {
+                    if(formulario.attr("method").equals("post")){
+                    String abs = formulario.absUrl("action");
+                    doc = Jsoup.connect(abs)
                             .data("asignatura", "practica1")
                             .header("Matricula", "2012-0994")
                             .post();
                     System.out.println("F.");
-                    System.out.println(doc.outerHtml());
+                    System.out.println(doc.body().toString());
                 }
             }
 
